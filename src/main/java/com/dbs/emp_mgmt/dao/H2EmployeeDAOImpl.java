@@ -19,7 +19,8 @@ public class H2EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public Employee save(Employee employee) {
-        this.jdbcTemplate.execute("insert into employee (id) values ('"+employee.getId()+"' )");
+        System.out.println("insert into employee (id,name,DOB) values ('"+employee.getId()+"', '"+ employee.getName()+ "', '" + employee.getDateOfBirth()+ "')");
+        this.jdbcTemplate.execute("insert into employee (id,name,DOB) values ('"+employee.getId()+"', '"+ employee.getName()+ "', '" + employee.getDateOfBirth()+ "')");
         return employee;
     }
 
@@ -30,6 +31,8 @@ public class H2EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public List<Employee> findAll() {
+
+
         return null;
     }
 
